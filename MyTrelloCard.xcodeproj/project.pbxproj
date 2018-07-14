@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */; };
-		F91F5FAC20FAAA4F000AB56E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FAB20FAAA4F000AB56E /* ViewController.swift */; };
 		F91F5FAE20FAAA50000AB56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAD20FAAA50000AB56E /* Assets.xcassets */; };
 		F91F5FB120FAAA50000AB56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAF20FAAA50000AB56E /* Main.storyboard */; };
+		F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FB920FAAE88000AB56E /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F91F5FA620FAAA4F000AB56E /* MyTrelloCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrelloCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F91F5FAB20FAAA4F000AB56E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F91F5FAD20FAAA50000AB56E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F91F5FB020FAAA50000AB56E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F91F5FB220FAAA50000AB56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F91F5FB320FAAA50000AB56E /* MyTrelloCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTrelloCard.entitlements; sourceTree = "<group>"; };
+		F91F5FB920FAAE88000AB56E /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */,
-				F91F5FAB20FAAA4F000AB56E /* ViewController.swift */,
+				F91F5FB920FAAE88000AB56E /* CardViewController.swift */,
 				F91F5FAD20FAAA50000AB56E /* Assets.xcassets */,
 				F91F5FAF20FAAA50000AB56E /* Main.storyboard */,
 				F91F5FB220FAAA50000AB56E /* Info.plist */,
@@ -133,8 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F91F5FAC20FAAA4F000AB56E /* ViewController.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
+				F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
