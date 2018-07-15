@@ -699,6 +699,9 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Sc9-N0-VLD" id="tOa-wp-Vbz"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

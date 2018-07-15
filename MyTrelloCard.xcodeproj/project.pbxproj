@@ -12,6 +12,8 @@
 		F91F5FB120FAAA50000AB56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAF20FAAA50000AB56E /* Main.storyboard */; };
 		F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FB920FAAE88000AB56E /* CardViewController.swift */; };
 		F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FBB20FBE62B000AB56E /* EventMonitor.swift */; };
+		F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC020FBED31000AB56E /* CardPresenter.swift */; };
+		F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		F91F5FB320FAAA50000AB56E /* MyTrelloCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyTrelloCard.entitlements; sourceTree = "<group>"; };
 		F91F5FB920FAAE88000AB56E /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		F91F5FBB20FBE62B000AB56E /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		F91F5FC020FBED31000AB56E /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
+		F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,15 +59,41 @@
 		F91F5FA820FAAA4F000AB56E /* MyTrelloCard */ = {
 			isa = PBXGroup;
 			children = (
+				F91F5FBF20FBE8E3000AB56E /* Data */,
+				F91F5FBE20FBE8DB000AB56E /* Domain */,
+				F91F5FBD20FBE8CE000AB56E /* Presentation */,
 				F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */,
-				F91F5FB920FAAE88000AB56E /* CardViewController.swift */,
 				F91F5FAD20FAAA50000AB56E /* Assets.xcassets */,
-				F91F5FAF20FAAA50000AB56E /* Main.storyboard */,
 				F91F5FB220FAAA50000AB56E /* Info.plist */,
 				F91F5FB320FAAA50000AB56E /* MyTrelloCard.entitlements */,
-				F91F5FBB20FBE62B000AB56E /* EventMonitor.swift */,
 			);
 			path = MyTrelloCard;
+			sourceTree = "<group>";
+		};
+		F91F5FBD20FBE8CE000AB56E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F91F5FAF20FAAA50000AB56E /* Main.storyboard */,
+				F91F5FBB20FBE62B000AB56E /* EventMonitor.swift */,
+				F91F5FB920FAAE88000AB56E /* CardViewController.swift */,
+				F91F5FC020FBED31000AB56E /* CardPresenter.swift */,
+				F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F91F5FBE20FBE8DB000AB56E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F91F5FBF20FBE8E3000AB56E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */,
+				F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */,
 				F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
 				F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */,
