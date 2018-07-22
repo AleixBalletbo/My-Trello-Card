@@ -15,6 +15,10 @@
 		F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC020FBED31000AB56E /* CardPresenter.swift */; };
 		F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */; };
 		F91F5FC52105254E000AB56E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC42105254E000AB56E /* CardView.swift */; };
+		F91F5FC8210527D3000AB56E /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC7210527D3000AB56E /* Board.swift */; };
+		F91F5FCB210528D2000AB56E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FCA210528D2000AB56E /* Result.swift */; };
+		F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FCC21052B9D000AB56E /* GetBoards.swift */; };
+		F91F5FD3210536EE000AB56E /* BoardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FD2210536EE000AB56E /* BoardGateway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		F91F5FC020FBED31000AB56E /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardConfigurator.swift; sourceTree = "<group>"; };
 		F91F5FC42105254E000AB56E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F91F5FC7210527D3000AB56E /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		F91F5FCA210528D2000AB56E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		F91F5FCC21052B9D000AB56E /* GetBoards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoards.swift; sourceTree = "<group>"; };
+		F91F5FD2210536EE000AB56E /* BoardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,9 @@
 		F91F5FBE20FBE8DB000AB56E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F91F5FD1210536A0000AB56E /* Gateways */,
+				F91F5FC9210528C2000AB56E /* UseCases */,
+				F91F5FC6210527A3000AB56E /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -97,6 +108,31 @@
 			children = (
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F91F5FC6210527A3000AB56E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F91F5FC7210527D3000AB56E /* Board.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F91F5FC9210528C2000AB56E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F91F5FCA210528D2000AB56E /* Result.swift */,
+				F91F5FCC21052B9D000AB56E /* GetBoards.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F91F5FD1210536A0000AB56E /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				F91F5FD2210536EE000AB56E /* BoardGateway.swift */,
+			);
+			path = Gateways;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,8 +208,12 @@
 				F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */,
 				F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */,
 				F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */,
+				F91F5FD3210536EE000AB56E /* BoardGateway.swift in Sources */,
+				F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
+				F91F5FC8210527D3000AB56E /* Board.swift in Sources */,
 				F91F5FC52105254E000AB56E /* CardView.swift in Sources */,
+				F91F5FCB210528D2000AB56E /* Result.swift in Sources */,
 				F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
