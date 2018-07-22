@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol CardView: class {
-    func displayTitle(title: String)
-}
-
 protocol CardPresenter {
     func getBoards()
 }

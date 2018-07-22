@@ -14,6 +14,7 @@
 		F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FBB20FBE62B000AB56E /* EventMonitor.swift */; };
 		F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC020FBED31000AB56E /* CardPresenter.swift */; };
 		F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */; };
+		F91F5FC52105254E000AB56E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FC42105254E000AB56E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F91F5FBB20FBE62B000AB56E /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		F91F5FC020FBED31000AB56E /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardConfigurator.swift; sourceTree = "<group>"; };
+		F91F5FC42105254E000AB56E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				F91F5FB920FAAE88000AB56E /* CardViewController.swift */,
 				F91F5FC020FBED31000AB56E /* CardPresenter.swift */,
 				F91F5FC220FBFFC6000AB56E /* CardConfigurator.swift */,
+				F91F5FC42105254E000AB56E /* CardView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */,
 				F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
+				F91F5FC52105254E000AB56E /* CardView.swift in Sources */,
 				F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
