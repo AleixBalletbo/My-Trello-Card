@@ -14,7 +14,10 @@ protocol CardConfigurator {
 
 class CardConfiguratorImplementation: CardConfigurator {
     func configure(cardViewController: CardViewController) {
-        let presenter = CardPresenterImplementation(view: cardViewController)
+        let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
+        let apiBoardsGateway = ApiBoardGatewayImplementation(apiClient: apiClient)
+        let getBoardsUseCase = GetBoardsUseCaseImplementation(boardGateway: apiBoardsGateway)
+        let presenter = CardPresenterImplementation(view: cardViewController, getBoardsUseCase: getBoardsUseCase)
         cardViewController.presenter = presenter
     }
 }

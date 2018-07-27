@@ -19,6 +19,14 @@
 		F91F5FCB210528D2000AB56E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FCA210528D2000AB56E /* Result.swift */; };
 		F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FCC21052B9D000AB56E /* GetBoards.swift */; };
 		F91F5FD3210536EE000AB56E /* BoardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FD2210536EE000AB56E /* BoardGateway.swift */; };
+		F9AB868021076942002A816C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB867F21076942002A816C /* ApiClient.swift */; };
+		F9AB868221076A18002A816C /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868121076A18002A816C /* ApiResponse.swift */; };
+		F9AB868421076A5D002A816C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868321076A5D002A816C /* JSON.swift */; };
+		F9AB868621076ABE002A816C /* APIBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868521076ABE002A816C /* APIBoard.swift */; };
+		F9AB868821076F3C002A816C /* GetBoardsApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */; };
+		F9AB868A210771D4002A816C /* ApiBoardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB8689210771D4002A816C /* ApiBoardGateway.swift */; };
+		F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */; };
+		F9D50626210B76C0006B472A /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D50625210B76C0006B472A /* Secret.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,14 @@
 		F91F5FCA210528D2000AB56E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F91F5FCC21052B9D000AB56E /* GetBoards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoards.swift; sourceTree = "<group>"; };
 		F91F5FD2210536EE000AB56E /* BoardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGateway.swift; sourceTree = "<group>"; };
+		F9AB867F21076942002A816C /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		F9AB868121076A18002A816C /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		F9AB868321076A5D002A816C /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		F9AB868521076ABE002A816C /* APIBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBoard.swift; sourceTree = "<group>"; };
+		F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoardsApiRequest.swift; sourceTree = "<group>"; };
+		F9AB8689210771D4002A816C /* ApiBoardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBoardGateway.swift; sourceTree = "<group>"; };
+		F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLWithKeyAndToken.swift; sourceTree = "<group>"; };
+		F9D50625210B76C0006B472A /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +85,12 @@
 		F91F5FA820FAAA4F000AB56E /* MyTrelloCard */ = {
 			isa = PBXGroup;
 			children = (
-				F91F5FBF20FBE8E3000AB56E /* Data */,
+				F9AB867A2107671C002A816C /* Data */,
 				F91F5FBE20FBE8DB000AB56E /* Domain */,
 				F91F5FBD20FBE8CE000AB56E /* Presentation */,
 				F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */,
 				F91F5FAD20FAAA50000AB56E /* Assets.xcassets */,
+				F9D50625210B76C0006B472A /* Secret.plist */,
 				F91F5FB220FAAA50000AB56E /* Info.plist */,
 				F91F5FB320FAAA50000AB56E /* MyTrelloCard.entitlements */,
 			);
@@ -103,13 +120,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		F91F5FBF20FBE8E3000AB56E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		F91F5FC6210527A3000AB56E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,52 @@
 				F91F5FD2210536EE000AB56E /* BoardGateway.swift */,
 			);
 			path = Gateways;
+			sourceTree = "<group>";
+		};
+		F9AB867A2107671C002A816C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB867B210768D7002A816C /* API */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F9AB867B210768D7002A816C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB867E210768F3002A816C /* Requests */,
+				F9AB867D210768EC002A816C /* Gateways */,
+				F9AB867C210768E1002A816C /* Entities */,
+				F9AB867F21076942002A816C /* ApiClient.swift */,
+				F9AB868121076A18002A816C /* ApiResponse.swift */,
+				F9AB868321076A5D002A816C /* JSON.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F9AB867C210768E1002A816C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB868521076ABE002A816C /* APIBoard.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F9AB867D210768EC002A816C /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB8689210771D4002A816C /* ApiBoardGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		F9AB867E210768F3002A816C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */,
+				F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +223,11 @@
 				TargetAttributes = {
 					F91F5FA520FAAA4F000AB56E = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -193,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D50626210B76C0006B472A /* Secret.plist in Resources */,
 				F91F5FAE20FAAA50000AB56E /* Assets.xcassets in Resources */,
 				F91F5FB120FAAA50000AB56E /* Main.storyboard in Resources */,
 			);
@@ -205,14 +267,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AB868021076942002A816C /* ApiClient.swift in Sources */,
+				F9AB868421076A5D002A816C /* JSON.swift in Sources */,
 				F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */,
 				F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */,
+				F9AB868A210771D4002A816C /* ApiBoardGateway.swift in Sources */,
 				F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */,
+				F9AB868621076ABE002A816C /* APIBoard.swift in Sources */,
 				F91F5FD3210536EE000AB56E /* BoardGateway.swift in Sources */,
 				F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */,
+				F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
 				F91F5FC8210527D3000AB56E /* Board.swift in Sources */,
 				F91F5FC52105254E000AB56E /* CardView.swift in Sources */,
+				F9AB868821076F3C002A816C /* GetBoardsApiRequest.swift in Sources */,
+				F9AB868221076A18002A816C /* ApiResponse.swift in Sources */,
 				F91F5FCB210528D2000AB56E /* Result.swift in Sources */,
 				F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */,
 			);

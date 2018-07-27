@@ -14,12 +14,22 @@ protocol CardPresenter {
 
 class CardPresenterImplementation: CardPresenter {
     fileprivate weak var view: CardView?
+    fileprivate let getBoardsUseCase: GetBoardsUseCase
     
-    init(view: CardView) {
+    init(view: CardView, getBoardsUseCase: GetBoardsUseCase) {
         self.view = view
+        self.getBoardsUseCase = getBoardsUseCase
     }
     
     func getBoards () {
+        getBoardsUseCase.getBoards { (result) in
+            switch result {
+            case let .success(boards):
+                self.view?.displayTitle(title: boards[0].name)
+            case let .failure(error):
+                print(error)
+            }
+        }
         
     }
 }
