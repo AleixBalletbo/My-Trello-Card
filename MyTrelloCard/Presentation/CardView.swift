@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CardView: class {
-    func displayTitle(title: String)
+    func loadBoards(boards: [String])
 }

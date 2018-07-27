@@ -25,7 +25,11 @@ class CardPresenterImplementation: CardPresenter {
         getBoardsUseCase.getBoards { (result) in
             switch result {
             case let .success(boards):
-                self.view?.displayTitle(title: boards[0].name)
+                var boardsName: [String] = []
+                for board in boards {
+                    boardsName.append(board.name)
+                }
+                self.view?.loadBoards(boards: boardsName)
             case let .failure(error):
                 print(error)
             }

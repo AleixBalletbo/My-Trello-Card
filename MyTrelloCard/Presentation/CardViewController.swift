@@ -13,7 +13,7 @@ class CardViewController: NSViewController, CardView {
     var configurator: CardConfigurator!
     var presenter: CardPresenter!
     
-    @IBOutlet var titleLabel: NSTextField!
+    @IBOutlet var boardsPopUp: NSPopUpButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,10 @@ class CardViewController: NSViewController, CardView {
         presenter.getBoards()
     }
     
-    func displayTitle(title: String) {
-        titleLabel.stringValue = title
-        (NSApp.delegate as! AppDelegate).changeStatusItemTitle(title: title)
+    func loadBoards(boards: [String]) {
+        for board in boards {
+            boardsPopUp.addItem(withTitle: board)
+        }
     }
     
 }
