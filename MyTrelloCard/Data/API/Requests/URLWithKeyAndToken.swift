@@ -12,18 +12,12 @@ class URLWithKeyAndToken {
     static func makeURL (string: String) -> URL {
         var urlComponents: URLComponents! = URLComponents(string: string)
         
-        let secrets = getSecrets()
+        let secret = Secret()
+        let key = secret.key
+        let token = secret.token
         
-        let queryItems = [URLQueryItem(name: "key", value: secrets["key"] as? String), URLQueryItem(name: "token", value: secrets["token"] as? String)]
+        let queryItems = [URLQueryItem(name: "key", value: key), URLQueryItem(name: "token", value: token)]
         urlComponents.queryItems = queryItems
         return urlComponents.url!
-    }
-    
-    private static func getSecrets () -> NSDictionary {
-        var keys: NSDictionary?
-        if let path = Bundle.main.path(forResource: "Secret", ofType: "plist") {
-            keys = NSDictionary(contentsOfFile: path)
-        }
-        return keys!
     }
 }

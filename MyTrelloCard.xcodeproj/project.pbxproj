@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049F8659210BC243002CE238 /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049F8658210BC243002CE238 /* Secret.plist */; };
+		049F865C210BC594002CE238 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F865B210BC594002CE238 /* Secret.swift */; };
 		F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */; };
 		F91F5FAE20FAAA50000AB56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAD20FAAA50000AB56E /* Assets.xcassets */; };
 		F91F5FB120FAAA50000AB56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAF20FAAA50000AB56E /* Main.storyboard */; };
@@ -26,10 +28,11 @@
 		F9AB868821076F3C002A816C /* GetBoardsApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */; };
 		F9AB868A210771D4002A816C /* ApiBoardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB8689210771D4002A816C /* ApiBoardGateway.swift */; };
 		F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */; };
-		F9D50626210B76C0006B472A /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9D50625210B76C0006B472A /* Secret.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049F8658210BC243002CE238 /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
+		049F865B210BC594002CE238 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		F91F5FA620FAAA4F000AB56E /* MyTrelloCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrelloCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F91F5FAD20FAAA50000AB56E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoardsApiRequest.swift; sourceTree = "<group>"; };
 		F9AB8689210771D4002A816C /* ApiBoardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBoardGateway.swift; sourceTree = "<group>"; };
 		F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLWithKeyAndToken.swift; sourceTree = "<group>"; };
-		F9D50625210B76C0006B472A /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049F865A210BC57F002CE238 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				049F865B210BC594002CE238 /* Secret.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F91F5F9D20FAAA4F000AB56E = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +100,7 @@
 				F91F5FBD20FBE8CE000AB56E /* Presentation */,
 				F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */,
 				F91F5FAD20FAAA50000AB56E /* Assets.xcassets */,
-				F9D50625210B76C0006B472A /* Secret.plist */,
+				049F8658210BC243002CE238 /* Secret.plist */,
 				F91F5FB220FAAA50000AB56E /* Info.plist */,
 				F91F5FB320FAAA50000AB56E /* MyTrelloCard.entitlements */,
 			);
@@ -156,6 +166,7 @@
 		F9AB867B210768D7002A816C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				049F865A210BC57F002CE238 /* Helpers */,
 				F9AB867E210768F3002A816C /* Requests */,
 				F9AB867D210768EC002A816C /* Gateways */,
 				F9AB867C210768E1002A816C /* Entities */,
@@ -254,7 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D50626210B76C0006B472A /* Secret.plist in Resources */,
+				049F8659210BC243002CE238 /* Secret.plist in Resources */,
 				F91F5FAE20FAAA50000AB56E /* Assets.xcassets in Resources */,
 				F91F5FB120FAAA50000AB56E /* Main.storyboard in Resources */,
 			);
@@ -274,6 +285,7 @@
 				F9AB868A210771D4002A816C /* ApiBoardGateway.swift in Sources */,
 				F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */,
 				F9AB868621076ABE002A816C /* APIBoard.swift in Sources */,
+				049F865C210BC594002CE238 /* Secret.swift in Sources */,
 				F91F5FD3210536EE000AB56E /* BoardGateway.swift in Sources */,
 				F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */,
 				F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */,
