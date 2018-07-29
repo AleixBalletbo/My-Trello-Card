@@ -15,6 +15,12 @@
 		049F8666210CC38C002CE238 /* GetListsApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8665210CC38C002CE238 /* GetListsApiRequest.swift */; };
 		049F8668210CC509002CE238 /* APIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8667210CC509002CE238 /* APIList.swift */; };
 		049F866A210CC553002CE238 /* ApiListsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8669210CC553002CE238 /* ApiListsGateway.swift */; };
+		049F866C210E1643002CE238 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F866B210E1643002CE238 /* Card.swift */; };
+		049F866E210E1682002CE238 /* GetFirstCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F866D210E1682002CE238 /* GetFirstCard.swift */; };
+		049F8670210E173A002CE238 /* CardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F866F210E173A002CE238 /* CardGateway.swift */; };
+		049F8672210E1791002CE238 /* APICard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8671210E1791002CE238 /* APICard.swift */; };
+		049F8674210E17DA002CE238 /* GetCardsApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8673210E17DA002CE238 /* GetCardsApiRequest.swift */; };
+		049F8676210E1897002CE238 /* ApiCardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8675210E1897002CE238 /* ApiCardGateway.swift */; };
 		F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */; };
 		F91F5FAE20FAAA50000AB56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAD20FAAA50000AB56E /* Assets.xcassets */; };
 		F91F5FB120FAAA50000AB56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91F5FAF20FAAA50000AB56E /* Main.storyboard */; };
@@ -45,6 +51,12 @@
 		049F8665210CC38C002CE238 /* GetListsApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListsApiRequest.swift; sourceTree = "<group>"; };
 		049F8667210CC509002CE238 /* APIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIList.swift; sourceTree = "<group>"; };
 		049F8669210CC553002CE238 /* ApiListsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiListsGateway.swift; sourceTree = "<group>"; };
+		049F866B210E1643002CE238 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		049F866D210E1682002CE238 /* GetFirstCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFirstCard.swift; sourceTree = "<group>"; };
+		049F866F210E173A002CE238 /* CardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGateway.swift; sourceTree = "<group>"; };
+		049F8671210E1791002CE238 /* APICard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICard.swift; sourceTree = "<group>"; };
+		049F8673210E17DA002CE238 /* GetCardsApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardsApiRequest.swift; sourceTree = "<group>"; };
+		049F8675210E1897002CE238 /* ApiCardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCardGateway.swift; sourceTree = "<group>"; };
 		F91F5FA620FAAA4F000AB56E /* MyTrelloCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTrelloCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91F5FA920FAAA4F000AB56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F91F5FAD20FAAA50000AB56E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +159,7 @@
 			children = (
 				F91F5FC7210527D3000AB56E /* Board.swift */,
 				049F865D210CBAAC002CE238 /* List.swift */,
+				049F866B210E1643002CE238 /* Card.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -157,6 +170,7 @@
 				F91F5FCA210528D2000AB56E /* Result.swift */,
 				F91F5FCC21052B9D000AB56E /* GetBoards.swift */,
 				049F8663210CC215002CE238 /* GetLists.swift */,
+				049F866D210E1682002CE238 /* GetFirstCard.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -166,6 +180,7 @@
 			children = (
 				F91F5FD2210536EE000AB56E /* BoardsGateway.swift */,
 				049F865F210CBD07002CE238 /* ListsGateway.swift */,
+				049F866F210E173A002CE238 /* CardGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -197,6 +212,7 @@
 			children = (
 				F9AB868521076ABE002A816C /* APIBoard.swift */,
 				049F8667210CC509002CE238 /* APIList.swift */,
+				049F8671210E1791002CE238 /* APICard.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -206,6 +222,7 @@
 			children = (
 				F9AB8689210771D4002A816C /* ApiBoardsGateway.swift */,
 				049F8669210CC553002CE238 /* ApiListsGateway.swift */,
+				049F8675210E1897002CE238 /* ApiCardGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -216,6 +233,7 @@
 				F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */,
 				F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */,
 				049F8665210CC38C002CE238 /* GetListsApiRequest.swift */,
+				049F8673210E17DA002CE238 /* GetCardsApiRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -297,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9AB868021076942002A816C /* ApiClient.swift in Sources */,
+				049F8670210E173A002CE238 /* CardGateway.swift in Sources */,
 				F9AB868421076A5D002A816C /* JSON.swift in Sources */,
+				049F866C210E1643002CE238 /* Card.swift in Sources */,
 				049F8660210CBD07002CE238 /* ListsGateway.swift in Sources */,
 				F91F5FC320FBFFC6000AB56E /* CardConfigurator.swift in Sources */,
 				F91F5FC120FBED31000AB56E /* CardPresenter.swift in Sources */,
@@ -305,9 +325,12 @@
 				F91F5FBC20FBE62B000AB56E /* EventMonitor.swift in Sources */,
 				049F866A210CC553002CE238 /* ApiListsGateway.swift in Sources */,
 				F9AB868621076ABE002A816C /* APIBoard.swift in Sources */,
+				049F8676210E1897002CE238 /* ApiCardGateway.swift in Sources */,
 				049F865C210BC594002CE238 /* Secret.swift in Sources */,
+				049F8674210E17DA002CE238 /* GetCardsApiRequest.swift in Sources */,
 				F91F5FD3210536EE000AB56E /* BoardsGateway.swift in Sources */,
 				F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */,
+				049F866E210E1682002CE238 /* GetFirstCard.swift in Sources */,
 				F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
 				F91F5FC8210527D3000AB56E /* Board.swift in Sources */,
@@ -317,6 +340,7 @@
 				F9AB868221076A18002A816C /* ApiResponse.swift in Sources */,
 				F91F5FCB210528D2000AB56E /* Result.swift in Sources */,
 				049F8666210CC38C002CE238 /* GetListsApiRequest.swift in Sources */,
+				049F8672210E1791002CE238 /* APICard.swift in Sources */,
 				049F8668210CC509002CE238 /* APIList.swift in Sources */,
 				049F865E210CBAAC002CE238 /* List.swift in Sources */,
 				F91F5FBA20FAAE88000AB56E /* CardViewController.swift in Sources */,

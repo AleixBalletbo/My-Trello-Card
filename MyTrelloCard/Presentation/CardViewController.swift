@@ -23,7 +23,16 @@ class CardViewController: NSViewController, CardView {
     @IBOutlet var originListsPopUp: NSPopUpButton!
     
     @IBOutlet var destinyListsPopUp: NSPopUpButton!
+    
+    @IBOutlet var loadCardButton: NSButton!
 
+    @IBAction func loadCardButtonPressed(_ sender: NSButton) {
+        let list: List = originListsPopUp.selectedItem?.representedObject as! List
+        presenter.getCard(listId: list.id)
+    }
+    
+    @IBOutlet weak var cardTextField: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -55,6 +64,18 @@ class CardViewController: NSViewController, CardView {
         
         destinyListsPopUp.menu = listMenu.copy() as? NSMenu
         destinyListsPopUp.isEnabled = true
+        
+        loadCardButton.isEnabled = true
+    }
+    
+    func loadCard(card: Card?) {
+        if let existingCard = card {
+            print(existingCard.name)
+            cardTextField.stringValue = existingCard.name
+        }
+        else {
+            cardTextField.stringValue = "There are no cards left"
+        }
     }
     
 }

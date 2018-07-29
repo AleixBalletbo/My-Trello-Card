@@ -11,17 +11,20 @@ import Foundation
 protocol CardPresenter {
     func didLoad()
     func getLists(boardId: String)
+    func getCard(listId: String)
 }
 
 class CardPresenterImplementation: CardPresenter {
     fileprivate weak var view: CardView?
     fileprivate let getBoardsUseCase: GetBoardsUseCase
     fileprivate let getListsUseCase: GetListsUseCase
+    fileprivate let getFirstCardUseCase: GetFirstCardUseCase
     
-    init(view: CardView, getBoardsUseCase: GetBoardsUseCase, getListsUseCase: GetListsUseCase) {
+    init(view: CardView, getBoardsUseCase: GetBoardsUseCase, getListsUseCase: GetListsUseCase, getFirstCardUseCase: GetFirstCardUseCase) {
         self.view = view
         self.getBoardsUseCase = getBoardsUseCase
         self.getListsUseCase = getListsUseCase
+        self.getFirstCardUseCase = getFirstCardUseCase
     }
     
     func didLoad() {
@@ -44,6 +47,17 @@ class CardPresenterImplementation: CardPresenter {
             switch result {
             case let .success(lists):
                 self.view?.loadLists(lists: lists)
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+    
+    func getCard (listId: String) {
+        getFirstCardUseCase.getFirstCard(listId: listId) { (result) in
+            switch result {
+            case let .success(card):
+                self.view?.loadCard(card: card)
             case let .failure(error):
                 print(error)
             }

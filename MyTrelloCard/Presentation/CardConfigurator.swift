@@ -18,11 +18,16 @@ class CardConfiguratorImplementation: CardConfigurator {
         
         let apiBoardsGateway = ApiBoardsGatewayImplementation(apiClient: apiClient)
         let apiListsGateway = ApiListsGatewayImplementation(apiClient: apiClient)
+        let apiCardGateway = ApiCardGatewayImplementation(apiClient: apiClient)
         
         let getBoardsUseCase = GetBoardsUseCaseImplementation(boardsGateway: apiBoardsGateway)
         let getListsUseCase = GetListsUseCaseImplementation(listsGateway: apiListsGateway)
+        let getFirstCardUseCase = GetFirstCardUseCaseImplementation(cardGateway: apiCardGateway)
         
-        let presenter = CardPresenterImplementation(view: cardViewController, getBoardsUseCase: getBoardsUseCase, getListsUseCase: getListsUseCase)
+        let presenter = CardPresenterImplementation(view: cardViewController,
+                                                    getBoardsUseCase: getBoardsUseCase,
+                                                    getListsUseCase: getListsUseCase,
+                                                    getFirstCardUseCase: getFirstCardUseCase)
         cardViewController.presenter = presenter
     }
 }
