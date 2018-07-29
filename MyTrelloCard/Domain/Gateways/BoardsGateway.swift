@@ -10,6 +10,6 @@ import Foundation
 
 typealias GetBoardsEntityGatewayCompletionHandler = (_ boards: Result<[Board]>) -> Void
 
-protocol BoardGateway {
+protocol BoardsGateway {
     func getBoards(completionHandler: @escaping GetBoardsEntityGatewayCompletionHandler)
 }

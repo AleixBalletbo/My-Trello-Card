@@ -16,14 +16,14 @@ protocol GetBoardsUseCase {
 
 class GetBoardsUseCaseImplementation: GetBoardsUseCase {
     
-    let boardGateway: BoardGateway
+    let boardsGateway: BoardsGateway
     
-    init(boardGateway: BoardGateway) {
-        self.boardGateway = boardGateway
+    init(boardsGateway: BoardsGateway) {
+        self.boardsGateway = boardsGateway
     }
     
     func getBoards(completionHandler: @escaping GetBoardsUseCaseCompletionHandler) {
-        boardGateway.getBoards { (result) in
+        boardsGateway.getBoards { (result) in
             completionHandler(result)
         }
     }

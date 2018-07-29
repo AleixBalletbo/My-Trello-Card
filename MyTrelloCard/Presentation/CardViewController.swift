@@ -14,18 +14,47 @@ class CardViewController: NSViewController, CardView {
     var presenter: CardPresenter!
     
     @IBOutlet var boardsPopUp: NSPopUpButton!
+    
+    @IBAction func popUpButtonUsed(_ sender: NSPopUpButton) {
+        let board: Board = sender.selectedItem?.representedObject as! Board
+        presenter.getLists(boardId: board.id)
+    }
+    
+    @IBOutlet var originListsPopUp: NSPopUpButton!
+    
+    @IBOutlet var destinyListsPopUp: NSPopUpButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         configurator.configure(cardViewController: self)
-        presenter.getBoards()
+        presenter.didLoad()
     }
     
-    func loadBoards(boards: [String]) {
+    func loadBoards(boards: [Board]) {
+        let boardMenu = NSMenu()
         for board in boards {
-            boardsPopUp.addItem(withTitle: board)
+            let boardMenuItem = NSMenuItem(title: board.name, action: nil, keyEquivalent: "")
+            boardMenuItem.representedObject = board
+            boardMenu.addItem(boardMenuItem)
         }
+        boardsPopUp.menu = boardMenu
+        boardsPopUp.select(nil)
+    }
+    
+    func loadLists(lists: [List]) {
+        let listMenu = NSMenu()
+        for list in lists {
+            let listMenuItem = NSMenuItem(title: list.name, action: nil, keyEquivalent: "")
+            listMenuItem.representedObject = list
+            listMenu.addItem(listMenuItem)
+        }
+        
+        originListsPopUp.menu = listMenu
+        originListsPopUp.isEnabled = true
+        
+        destinyListsPopUp.menu = listMenu.copy() as? NSMenu
+        destinyListsPopUp.isEnabled = true
     }
     
 }

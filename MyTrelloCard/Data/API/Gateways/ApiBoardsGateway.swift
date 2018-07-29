@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ApiBoardGatewayImplementation: BoardGateway {
+class ApiBoardsGatewayImplementation: BoardsGateway {
     
     let apiClient: ApiClient
     
@@ -28,6 +28,5 @@ class ApiBoardGatewayImplementation: BoardGateway {
             }
         }
     }
-    
     
 }
