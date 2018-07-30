@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CardView: class {
+protocol MainWindowView: class {
     func loadBoards(boards: [Board])
     func loadLists(lists: [List])
     func loadCard(card: Card?)

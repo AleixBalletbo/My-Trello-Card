@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.title = "My Trello Card"
             button.action = #selector(togglePopover(_:))
         }
-        popover.contentViewController = CardViewController.freshController(configurator: CardConfiguratorImplementation())
+        popover.contentViewController = MainWindowViewController.freshController(configurator: MainWindowConfiguratorImplementation())
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let strongSelf = self, strongSelf.popover.isShown {
                 strongSelf.closePopover(sender: event)

@@ -8,10 +8,10 @@
 
 import Cocoa
 
-class CardViewController: NSViewController, CardView {
+class MainWindowViewController: NSViewController, MainWindowView {
     
-    var configurator: CardConfigurator!
-    var presenter: CardPresenter!
+    var configurator: MainWindowConfigurator!
+    var presenter: MainWindowPresenter!
     
     @IBOutlet var boardsPopUp: NSPopUpButton!
     
@@ -31,7 +31,7 @@ class CardViewController: NSViewController, CardView {
         presenter.getCard(listId: list.id)
     }
     
-    @IBOutlet weak var cardTextField: NSTextField!
+    @IBOutlet weak var cardView: CardView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,21 +70,20 @@ class CardViewController: NSViewController, CardView {
     
     func loadCard(card: Card?) {
         if let existingCard = card {
-            print(existingCard.name)
-            cardTextField.stringValue = existingCard.name
+            cardView.title = existingCard.name
         }
         else {
-            cardTextField.stringValue = "There are no cards left"
+            cardView.title = "There are no cards left"
         }
     }
     
 }
 
-extension CardViewController {
-    static func freshController(configurator: CardConfigurator) -> CardViewController {
+extension MainWindowViewController {
+    static func freshController(configurator: MainWindowConfigurator) -> MainWindowViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier(rawValue: "CardViewController")
-        guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? CardViewController else {
+        guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? MainWindowViewController else {
             fatalError("Why cant I find CardViewController? - Check Main.storyboard")
         }
         viewController.configurator = configurator

@@ -8,19 +8,19 @@
 
 import Foundation
 
-protocol CardPresenter {
+protocol MainWindowPresenter {
     func didLoad()
     func getLists(boardId: String)
     func getCard(listId: String)
 }
 
-class CardPresenterImplementation: CardPresenter {
-    fileprivate weak var view: CardView?
+class MainWindowPresenterImplementation: MainWindowPresenter {
+    fileprivate weak var view: MainWindowView?
     fileprivate let getBoardsUseCase: GetBoardsUseCase
     fileprivate let getListsUseCase: GetListsUseCase
     fileprivate let getFirstCardUseCase: GetFirstCardUseCase
     
-    init(view: CardView, getBoardsUseCase: GetBoardsUseCase, getListsUseCase: GetListsUseCase, getFirstCardUseCase: GetFirstCardUseCase) {
+    init(view: MainWindowView, getBoardsUseCase: GetBoardsUseCase, getListsUseCase: GetListsUseCase, getFirstCardUseCase: GetFirstCardUseCase) {
         self.view = view
         self.getBoardsUseCase = getBoardsUseCase
         self.getListsUseCase = getListsUseCase

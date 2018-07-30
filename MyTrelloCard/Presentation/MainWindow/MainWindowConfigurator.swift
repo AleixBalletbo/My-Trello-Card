@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol CardConfigurator {
-    func configure(cardViewController: CardViewController)
+protocol MainWindowConfigurator {
+    func configure(cardViewController: MainWindowViewController)
 }
 
-class CardConfiguratorImplementation: CardConfigurator {
-    func configure(cardViewController: CardViewController) {
+class MainWindowConfiguratorImplementation: MainWindowConfigurator {
+    func configure(cardViewController: MainWindowViewController) {
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
         
         let apiBoardsGateway = ApiBoardsGatewayImplementation(apiClient: apiClient)
@@ -24,7 +24,7 @@ class CardConfiguratorImplementation: CardConfigurator {
         let getListsUseCase = GetListsUseCaseImplementation(listsGateway: apiListsGateway)
         let getFirstCardUseCase = GetFirstCardUseCaseImplementation(cardGateway: apiCardGateway)
         
-        let presenter = CardPresenterImplementation(view: cardViewController,
+        let presenter = MainWindowPresenterImplementation(view: cardViewController,
                                                     getBoardsUseCase: getBoardsUseCase,
                                                     getListsUseCase: getListsUseCase,
                                                     getFirstCardUseCase: getFirstCardUseCase)

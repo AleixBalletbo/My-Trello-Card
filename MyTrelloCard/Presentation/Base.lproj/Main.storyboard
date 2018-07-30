@@ -681,10 +681,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Card View Controller-->
+        <!--Main Window View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="CardViewController" id="XfG-lQ-9wD" customClass="CardViewController" customModule="MyTrelloCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardViewController" id="XfG-lQ-9wD" customClass="MainWindowViewController" customModule="MyTrelloCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -816,27 +816,25 @@
                                     <action selector="loadCardButtonPressed:" target="XfG-lQ-9wD" id="OJc-Rh-9we"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-fD-9BX" userLabel="Card">
-                                <rect key="frame" x="105" y="126" width="241" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Card" id="aXp-a4-bM3">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="nsH-lN-HTw" customClass="CardView" customModule="MyTrelloCard" customModuleProvider="target">
+                                <rect key="frame" x="20" y="83" width="410" height="167"/>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="qoM-ei-bAI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="3iw-W0-mN9"/>
+                            <constraint firstItem="nsH-lN-HTw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="9Ar-7d-6Md"/>
                             <constraint firstItem="a0G-Ra-8Pk" firstAttribute="centerY" secondItem="qoM-ei-bAI" secondAttribute="centerY" constant="10" id="ELA-Z4-yF2"/>
+                            <constraint firstItem="qoM-ei-bAI" firstAttribute="top" secondItem="nsH-lN-HTw" secondAttribute="bottom" constant="20" id="Ip0-t5-H1t"/>
                             <constraint firstAttribute="bottom" secondItem="qoM-ei-bAI" secondAttribute="bottom" constant="20" id="LLQ-XK-42C"/>
                             <constraint firstAttribute="trailing" secondItem="a0G-Ra-8Pk" secondAttribute="trailing" constant="20" id="bEn-Eo-hek"/>
                             <constraint firstItem="a0G-Ra-8Pk" firstAttribute="leading" secondItem="qoM-ei-bAI" secondAttribute="trailing" constant="20" id="cCl-Xi-yPS"/>
+                            <constraint firstItem="nsH-lN-HTw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="hse-4v-zbS"/>
+                            <constraint firstAttribute="trailing" secondItem="nsH-lN-HTw" secondAttribute="trailing" constant="20" id="z8k-tX-4Ad"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boardsPopUp" destination="Ef7-MQ-8F5" id="TeY-9v-B1I"/>
-                        <outlet property="cardTextField" destination="WEK-fD-9BX" id="7wz-mD-fOW"/>
+                        <outlet property="cardView" destination="nsH-lN-HTw" id="0GZ-hJ-5i6"/>
                         <outlet property="destinyListsPopUp" destination="dzM-EJ-MET" id="DSU-4c-AzH"/>
                         <outlet property="loadCardButton" destination="a0G-Ra-8Pk" id="bRN-YB-dNA"/>
                         <outlet property="originListsPopUp" destination="2mX-Gr-ccZ" id="z19-zV-vZ3"/>
