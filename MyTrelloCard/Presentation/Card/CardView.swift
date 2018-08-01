@@ -8,10 +8,55 @@
 
 import Cocoa
 
+@IBDesignable
 class CardView: NSView {
 
     @IBOutlet var contentView: NSView!
+    
     @IBOutlet weak var titleLabel: NSTextField!
+    
+    @IBOutlet var descriptionLabel: NSTextView!
+    
+    @IBInspectable
+    var backgroundColor: NSColor = NSColor.gray {
+        didSet {
+            layer?.backgroundColor = backgroundColor.cgColor
+        }
+    }
+
+    @IBInspectable var cornerRadius: CGFloat = 10 {
+        didSet {
+            layer?.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable
+    var shadowColor: NSColor = NSColor.black {
+        didSet {
+            layer?.shadowColor = shadowColor.cgColor
+        }
+    }
+    
+    @IBInspectable
+    var shadowOpacity: Float = 0 {
+        didSet {
+            layer?.shadowOpacity = shadowOpacity
+        }
+    }
+    
+    @IBInspectable
+    var shadowOffset: CGSize = CGSize(width: 0, height: 0) {
+        didSet {
+            layer?.shadowOffset = shadowOffset
+        }
+    }
+    
+    @IBInspectable
+    var shadowRadius: CGFloat = 0 {
+        didSet {
+            layer?.shadowRadius = shadowRadius
+        }
+    }
     
     var title: String? {
         get { return titleLabel.stringValue }
@@ -20,6 +65,8 @@ class CardView: NSView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        self.wantsLayer = true
+        self.superview?.wantsLayer = true
         initSubviews()
     }
     
@@ -27,6 +74,22 @@ class CardView: NSView {
         super.init(frame: frame)
         initSubviews()
     }
+    
+    override func prepareForInterfaceBuilder() {
+        //initSubviews()
+        layer?.backgroundColor = backgroundColor.cgColor
+        layer?.cornerRadius = cornerRadius
+        
+        layer?.shadowColor = shadowColor.cgColor
+        layer?.shadowOpacity = shadowOpacity
+        layer?.shadowOffset = shadowOffset
+        layer?.shadowRadius = shadowRadius
+    }
+    
+//    override func awakeFromNib() {
+//        layer?.backgroundColor = backgroundColor.cgColor
+//        layer?.cornerRadius = cornerRadius
+//    }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -36,12 +99,15 @@ class CardView: NSView {
     
     func initSubviews() {
         // standard initialization logic
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CardView"), bundle: nil)
+        let bundle = Bundle(for: type(of: self))
+        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CardView"), bundle: bundle)
         nib!.instantiate(withOwner: self, topLevelObjects: nil)
         contentView.frame = bounds
-        addSubview(contentView)
-            
+        contentView.addSubview(titleLabel)
+        self.addSubview(contentView)
+        
         // custom initialization logic
+        self.shadow = NSShadow()
     }
     
 }
