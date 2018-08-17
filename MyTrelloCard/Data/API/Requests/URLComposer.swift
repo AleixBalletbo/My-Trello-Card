@@ -8,8 +8,11 @@
 
 import Foundation
 
-class URLWithKeyAndToken {
-    static func makeURL (string: String) -> URL {
+class URLComposer {
+    
+    var url: URLComponents
+    
+    init (string: String) {
         var urlComponents: URLComponents! = URLComponents(string: string)
         
         let secret = Secret()
@@ -18,6 +21,15 @@ class URLWithKeyAndToken {
         
         let queryItems = [URLQueryItem(name: "key", value: key), URLQueryItem(name: "token", value: token)]
         urlComponents.queryItems = queryItems
-        return urlComponents.url!
+        url = urlComponents
+    }
+    
+    func addQueryParam (name: String, value: String) {
+        let queryItem = URLQueryItem(name: name, value: value)
+        url.queryItems?.append(queryItem)
+    }
+    
+    func getUrl () -> URL{
+        return url.url!
     }
 }

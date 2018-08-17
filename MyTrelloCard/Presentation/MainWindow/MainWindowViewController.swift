@@ -70,10 +70,11 @@ class MainWindowViewController: NSViewController, MainWindowView {
     
     func loadCard(card: Card?) {
         if let existingCard = card {
-            cardView.title = existingCard.name
+            cardView.nameText = existingCard.name
+            cardView.descriptionText = existingCard.description
         }
         else {
-            cardView.title = "There are no cards left"
+            cardView.nameText = "There are no cards left"
         }
     }
     

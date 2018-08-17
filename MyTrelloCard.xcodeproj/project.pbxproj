@@ -41,7 +41,7 @@
 		F9AB868621076ABE002A816C /* APIBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868521076ABE002A816C /* APIBoard.swift */; };
 		F9AB868821076F3C002A816C /* GetBoardsApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */; };
 		F9AB868A210771D4002A816C /* ApiBoardsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB8689210771D4002A816C /* ApiBoardsGateway.swift */; };
-		F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */; };
+		F9D50624210B716D006B472A /* URLComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D50623210B716D006B472A /* URLComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +82,7 @@
 		F9AB868521076ABE002A816C /* APIBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBoard.swift; sourceTree = "<group>"; };
 		F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoardsApiRequest.swift; sourceTree = "<group>"; };
 		F9AB8689210771D4002A816C /* ApiBoardsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBoardsGateway.swift; sourceTree = "<group>"; };
-		F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLWithKeyAndToken.swift; sourceTree = "<group>"; };
+		F9D50623210B716D006B472A /* URLComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F9AB868721076F3C002A816C /* GetBoardsApiRequest.swift */,
-				F9D50623210B716D006B472A /* URLWithKeyAndToken.swift */,
+				F9D50623210B716D006B472A /* URLComposer.swift */,
 				049F8665210CC38C002CE238 /* GetListsApiRequest.swift */,
 				049F8673210E17DA002CE238 /* GetCardsApiRequest.swift */,
 			);
@@ -355,7 +355,7 @@
 				F91F5FD3210536EE000AB56E /* BoardsGateway.swift in Sources */,
 				F91F5FCD21052B9D000AB56E /* GetBoards.swift in Sources */,
 				049F866E210E1682002CE238 /* GetFirstCard.swift in Sources */,
-				F9D50624210B716D006B472A /* URLWithKeyAndToken.swift in Sources */,
+				F9D50624210B716D006B472A /* URLComposer.swift in Sources */,
 				F91F5FAA20FAAA4F000AB56E /* AppDelegate.swift in Sources */,
 				F91F5FC8210527D3000AB56E /* Board.swift in Sources */,
 				F91F5FC52105254E000AB56E /* MainWindowView.swift in Sources */,

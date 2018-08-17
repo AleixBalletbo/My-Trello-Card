@@ -11,6 +11,7 @@ import Foundation
 struct ApiCard: InitializableWithData, InitializableWithJson {
     var id: String
     var name: String
+    var description: String
     
     init (data: Data?) throws {
         guard let data = data,
@@ -24,17 +25,19 @@ struct ApiCard: InitializableWithData, InitializableWithJson {
     
     init (json: [String: Any]) throws {
         guard let id = json["id"] as? String,
-            let name = json["name"] as? String else {
+            let name = json["name"] as? String,
+            let description = json["desc"] as? String else {
                 throw NSError.createParseError()
         }
         
         self.id = id
         self.name = name
+        self.description = description
     }
 }
 
 extension ApiCard {
     var card: Card {
-        return Card(id: id, name: name)
+        return Card(id: id, name: name, description: description)
     }
 }

@@ -10,11 +10,14 @@ import Foundation
 
 struct GetBoardsApiRequest: ApiRequest {
     var urlRequest: URLRequest {
-        let url = URLWithKeyAndToken.makeURL(string: "https://api.trello.com/1/members/me/boards")
-        var request = URLRequest(url: url)
+        let urlComposer = URLComposer(string: "https://api.trello.com/1/members/me/boards")
+        urlComposer.addQueryParam(name: "filter", value: "open")
+        urlComposer.addQueryParam(name: "fields", value: "id,name")
+        urlComposer.addQueryParam(name: "lists", value: "none")
+        urlComposer.addQueryParam(name: "membership", value: "none")
         
+        var request = URLRequest(url: urlComposer.getUrl())
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
         request.httpMethod = "GET"
         
         return request

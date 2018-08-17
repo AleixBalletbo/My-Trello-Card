@@ -13,7 +13,7 @@ class CardView: NSView {
 
     @IBOutlet var contentView: NSView!
     
-    @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var nameLabel: NSTextField!
     
     @IBOutlet var descriptionLabel: NSTextView!
     
@@ -58,9 +58,14 @@ class CardView: NSView {
         }
     }
     
-    var title: String? {
-        get { return titleLabel.stringValue }
-        set { titleLabel.stringValue = newValue! }
+    var nameText: String? {
+        get { return nameLabel.stringValue }
+        set { nameLabel.stringValue = newValue! }
+    }
+    
+    var descriptionText: String? {
+        get { return descriptionLabel.string }
+        set { descriptionLabel.string = newValue! }
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -86,11 +91,6 @@ class CardView: NSView {
         layer?.shadowRadius = shadowRadius
     }
     
-//    override func awakeFromNib() {
-//        layer?.backgroundColor = backgroundColor.cgColor
-//        layer?.cornerRadius = cornerRadius
-//    }
-    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
@@ -103,7 +103,7 @@ class CardView: NSView {
         let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CardView"), bundle: bundle)
         nib!.instantiate(withOwner: self, topLevelObjects: nil)
         contentView.frame = bounds
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(nameLabel)
         self.addSubview(contentView)
         
         // custom initialization logic

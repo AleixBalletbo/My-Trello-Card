@@ -17,11 +17,11 @@ struct GetCardsApiRequest: ApiRequest {
     }
     
     var urlRequest: URLRequest {
-        let url = URLWithKeyAndToken.makeURL(string: "https://api.trello.com/1/lists/" + listId + "/cards")
-        var request = URLRequest(url: url)
+        let urlComposer = URLComposer(string: "https://api.trello.com/1/lists/" + listId + "/cards")
+        urlComposer.addQueryParam(name: "fields", value: "id,name,desc")
         
+        var request = URLRequest(url: urlComposer.getUrl())
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
         request.httpMethod = "GET"
         
         return request

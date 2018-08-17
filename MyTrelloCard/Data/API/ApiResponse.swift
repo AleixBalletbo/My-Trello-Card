@@ -90,7 +90,7 @@ extension Array: InitializableWithData {
 
 extension NSError {
     static func createParseError() -> NSError {
-        return NSError(domain: "com.fortech.library",
+        return NSError(domain: "com.aleixballetbo.mytrellocard",
                        code: ApiParseError.code,
                        userInfo: [NSLocalizedDescriptionKey: "A parsing error occured"])
     }
