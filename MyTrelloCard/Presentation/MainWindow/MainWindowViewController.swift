@@ -72,10 +72,29 @@ class MainWindowViewController: NSViewController, MainWindowView {
         if let existingCard = card {
             cardView.nameText = existingCard.name
             cardView.descriptionText = existingCard.description
+            if let dueDate = existingCard.due {
+                cardView.dueText = getReadableDate(date: dueDate)
+            }
+            else {
+                cardView.dueText = "This card has no due date"
+            }
         }
         else {
             cardView.nameText = "There are no cards left"
         }
+    }
+    
+    func getReadableDate (date: String) -> String {
+        let dateISOFormatter = ISO8601DateFormatter()
+        dateISOFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        let date = dateISOFormatter.date(from: date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.doesRelativeDateFormatting = true
+        return dateFormatter.string(from: date!)
     }
     
 }

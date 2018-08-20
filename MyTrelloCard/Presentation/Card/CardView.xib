@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="contentView" destination="c22-O7-iKe" id="pfA-y4-VhU"/>
                 <outlet property="descriptionLabel" destination="gHf-Wc-OtM" id="Hun-C3-Qt3"/>
+                <outlet property="dueLabel" destination="PrL-1P-xop" id="c9b-da-q1I"/>
                 <outlet property="nameLabel" destination="xIz-Xg-sXK" id="dxS-8y-ERa"/>
             </connections>
         </customObject>
@@ -67,15 +68,35 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <imageView horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6N-dS-rOr" userLabel="Due Date Image">
+                    <rect key="frame" x="10" y="64" width="20" height="20"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="clock" id="2p9-fk-vKj"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PrL-1P-xop">
+                    <rect key="frame" x="35" y="67" width="355" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Due date" drawsBackground="YES" id="Po0-VV-rie">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.98611420819999995" green="1" blue="0.98769522629999995" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="PrL-1P-xop" secondAttribute="trailing" constant="10" id="6N7-7p-bGa"/>
+                <constraint firstItem="r6N-dS-rOr" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="DOy-ri-EvG"/>
+                <constraint firstItem="PrL-1P-xop" firstAttribute="top" secondItem="cXs-ZY-XNR" secondAttribute="bottom" constant="10" id="DcC-Tw-d2e"/>
                 <constraint firstItem="cXs-ZY-XNR" firstAttribute="top" secondItem="xIz-Xg-sXK" secondAttribute="bottom" constant="10" id="LMd-pM-u0T"/>
                 <constraint firstItem="cXs-ZY-XNR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="VFb-OO-e80"/>
                 <constraint firstAttribute="trailing" secondItem="cXs-ZY-XNR" secondAttribute="trailing" constant="10" id="XGg-uO-wVf"/>
                 <constraint firstAttribute="trailing" secondItem="xIz-Xg-sXK" secondAttribute="trailing" constant="10" id="o4y-b1-jZS"/>
+                <constraint firstItem="r6N-dS-rOr" firstAttribute="top" secondItem="cXs-ZY-XNR" secondAttribute="bottom" constant="10" id="pVQ-bi-WVE"/>
                 <constraint firstItem="xIz-Xg-sXK" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="sJb-uh-OWq"/>
                 <constraint firstItem="xIz-Xg-sXK" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="uYu-BH-THr"/>
+                <constraint firstItem="PrL-1P-xop" firstAttribute="leading" secondItem="r6N-dS-rOr" secondAttribute="trailing" constant="5" id="zNG-vh-X8P"/>
             </constraints>
         </customView>
     </objects>
+    <resources>
+        <image name="clock" width="20" height="20"/>
+    </resources>
 </document>

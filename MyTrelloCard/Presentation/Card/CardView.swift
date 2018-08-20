@@ -17,6 +17,8 @@ class CardView: NSView {
     
     @IBOutlet var descriptionLabel: NSTextView!
     
+    @IBOutlet weak var dueLabel: NSTextField!
+    
     @IBInspectable
     var backgroundColor: NSColor = NSColor.gray {
         didSet {
@@ -66,6 +68,11 @@ class CardView: NSView {
     var descriptionText: String? {
         get { return descriptionLabel.string }
         set { descriptionLabel.string = newValue! }
+    }
+    
+    var dueText: String? {
+        get { return dueLabel.stringValue }
+        set { dueLabel.stringValue = newValue! }
     }
     
     required init(coder aDecoder: NSCoder) {

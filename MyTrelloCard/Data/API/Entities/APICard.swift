@@ -12,6 +12,7 @@ struct ApiCard: InitializableWithData, InitializableWithJson {
     var id: String
     var name: String
     var description: String
+    var due: String?
     
     init (data: Data?) throws {
         guard let data = data,
@@ -30,14 +31,17 @@ struct ApiCard: InitializableWithData, InitializableWithJson {
                 throw NSError.createParseError()
         }
         
+        let due = json["due"] as? String //if due is nil, it means that there is no due date for this card
+        
         self.id = id
         self.name = name
         self.description = description
+        self.due = due
     }
 }
 
 extension ApiCard {
     var card: Card {
-        return Card(id: id, name: name, description: description)
+        return Card(id: id, name: name, description: description, due: due)
     }
 }
