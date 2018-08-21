@@ -74,9 +74,25 @@ class MainWindowViewController: NSViewController, MainWindowView {
             cardView.descriptionText = existingCard.description
             if let dueDate = existingCard.due {
                 cardView.dueText = getReadableDate(date: dueDate)
+                if dueDate < Date() {
+                    let redColor = CGColor(red: 0.8, green: 0, blue: 0, alpha: 1)
+                    cardView.setDueBackground(backgroundColor: redColor, textColor: NSColor.white)
+                }
+                else {
+                    cardView.setDueBackground(backgroundColor: CGColor.clear, textColor: NSColor.gray)
+                }
             }
             else {
                 cardView.dueText = "This card has no due date"
+                cardView.setDueBackground(backgroundColor: CGColor.clear, textColor: NSColor.gray)
+            }
+            cardView.checklistItemsText = "\(existingCard.checkItemsChecked)/\(existingCard.checkItems)"
+            if existingCard.checkItemsChecked == existingCard.checkItems && existingCard.checkItems != 0 {
+                let greenColor = CGColor(red: 0, green: 0.8, blue: 0, alpha: 1)
+                cardView.setChecklistBackground(backgroundColor: greenColor, textColor: NSColor.white)
+            }
+            else {
+                cardView.setChecklistBackground(backgroundColor: CGColor.clear, textColor: NSColor.gray)
             }
         }
         else {
@@ -84,17 +100,13 @@ class MainWindowViewController: NSViewController, MainWindowView {
         }
     }
     
-    func getReadableDate (date: String) -> String {
-        let dateISOFormatter = ISO8601DateFormatter()
-        dateISOFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
-        let date = dateISOFormatter.date(from: date)
-        
+    private func getReadableDate (date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.doesRelativeDateFormatting = true
-        return dateFormatter.string(from: date!)
+        return dateFormatter.string(from: date)
     }
     
 }

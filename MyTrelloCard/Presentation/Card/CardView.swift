@@ -17,7 +17,27 @@ class CardView: NSView {
     
     @IBOutlet var descriptionLabel: NSTextView!
     
+    @IBOutlet weak var dueStackView: NSStackView!
+    private var dueBackground: NSView = {
+        let view = NSView()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = CGColor.clear
+        view.layer?.cornerRadius = 5
+        return view
+    }()
+    @IBOutlet weak var dueIcon: NSImageView!
     @IBOutlet weak var dueLabel: NSTextField!
+    
+    @IBOutlet weak var checklistStackView: NSStackView!
+    private var checklistBackground: NSView = {
+        let view = NSView()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = CGColor.clear
+        view.layer?.cornerRadius = 5
+        return view
+    }()
+    @IBOutlet weak var checklistIcon: NSImageView!
+    @IBOutlet weak var checklistLabel: NSTextField!
     
     @IBInspectable
     var backgroundColor: NSColor = NSColor.gray {
@@ -75,16 +95,25 @@ class CardView: NSView {
         set { dueLabel.stringValue = newValue! }
     }
     
+    var checklistItemsText: String? {
+        get { return checklistLabel.stringValue }
+        set { checklistLabel.stringValue = newValue! }
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         self.wantsLayer = true
         self.superview?.wantsLayer = true
         initSubviews()
+        pinBackground(dueBackground, to: dueStackView)
+        pinBackground(checklistBackground, to: checklistStackView)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         initSubviews()
+        pinBackground(dueBackground, to: dueStackView)
+        pinBackground(checklistBackground, to: checklistStackView)
     }
     
     override func prepareForInterfaceBuilder() {
@@ -104,7 +133,7 @@ class CardView: NSView {
         // Drawing code here.
     }
     
-    func initSubviews() {
+    private func initSubviews() {
         // standard initialization logic
         let bundle = Bundle(for: type(of: self))
         let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CardView"), bundle: bundle)
@@ -117,4 +146,47 @@ class CardView: NSView {
         self.shadow = NSShadow()
     }
     
+    private func pinBackground(_ view: NSView, to stackView: NSStackView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        stackView.subviews.insert(view, at: 0)
+        view.pin(to: stackView)
+    }
+    
+    func setDueBackground(backgroundColor: CGColor, textColor: NSColor) {
+        dueBackground.layer?.backgroundColor = backgroundColor
+        dueLabel.textColor = textColor
+        dueIcon.image = dueIcon.image?.tint(color: textColor)
+    }
+    
+    func setChecklistBackground(backgroundColor: CGColor, textColor: NSColor) {
+        checklistBackground.layer?.backgroundColor = backgroundColor
+        checklistLabel.textColor = textColor
+        checklistIcon.image = checklistIcon.image?.tint(color: textColor)
+    }
+    
+}
+
+extension NSView {
+    public func pin(to view: NSView) {
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topAnchor.constraint(equalTo: view.topAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+}
+
+extension NSImage {
+    func tint(color: NSColor) -> NSImage {
+        guard !self.isTemplate else { return self }
+        let image = self.copy() as! NSImage
+        image.lockFocus()
+        color.set()
+        let imageRect = NSRect(origin: NSZeroPoint, size: image.size)
+        imageRect.fill(using: .sourceAtop)
+        image.unlockFocus()
+        image.isTemplate = false
+        return image
+    }
 }

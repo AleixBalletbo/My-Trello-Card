@@ -18,7 +18,7 @@ struct GetCardsApiRequest: ApiRequest {
     
     var urlRequest: URLRequest {
         let urlComposer = URLComposer(string: "https://api.trello.com/1/lists/" + listId + "/cards")
-        urlComposer.addQueryParam(name: "fields", value: "id,name,desc,due")
+        urlComposer.addQueryParam(name: "fields", value: "id,name,desc,due,badges")
         
         var request = URLRequest(url: urlComposer.getUrl())
         request.setValue("application/json", forHTTPHeaderField: "Accept")

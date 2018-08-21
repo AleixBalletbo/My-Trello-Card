@@ -12,5 +12,7 @@ struct Card {
     var id: String
     var name: String?
     var description: String?
-    var due: String?
+    var due: Date?
+    var checkItems: Int
+    var checkItemsChecked: Int
 }

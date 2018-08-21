@@ -686,7 +686,7 @@
             <objects>
                 <viewController storyboardIdentifier="CardViewController" id="XfG-lQ-9wD" customClass="MainWindowViewController" customModule="MyTrelloCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="303"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="291"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qoM-ei-bAI" userLabel="Configuration Stack View">
@@ -817,9 +817,8 @@
                                 </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="nsH-lN-HTw" customClass="CardView" customModule="MyTrelloCard" customModuleProvider="target">
-                                <rect key="frame" x="20" y="83" width="400" height="200"/>
+                                <rect key="frame" x="20" y="83" width="400" height="188"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="6Uc-eF-lde"/>
                                     <constraint firstAttribute="width" constant="400" id="EBl-sH-F6X"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -867,7 +866,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="7qP-dI-B6H"/>
             </objects>
-            <point key="canvasLocation" x="67" y="655.5"/>
+            <point key="canvasLocation" x="67" y="650.5"/>
         </scene>
     </scenes>
 </document>
