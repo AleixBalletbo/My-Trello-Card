@@ -13,6 +13,8 @@ class CardView: NSView {
 
     @IBOutlet var contentView: NSView!
     
+    @IBOutlet weak var labelsStackView: NSStackView!
+    
     @IBOutlet weak var nameLabel: NSTextField!
     
     @IBOutlet var descriptionLabel: NSTextView!
@@ -107,6 +109,7 @@ class CardView: NSView {
         initSubviews()
         pinBackground(dueBackground, to: dueStackView)
         pinBackground(checklistBackground, to: checklistStackView)
+        labelsStackView.userInterfaceLayoutDirection = .rightToLeft
     }
     
     override init(frame: CGRect) {
@@ -114,10 +117,10 @@ class CardView: NSView {
         initSubviews()
         pinBackground(dueBackground, to: dueStackView)
         pinBackground(checklistBackground, to: checklistStackView)
+        labelsStackView.userInterfaceLayoutDirection = .rightToLeft
     }
     
     override func prepareForInterfaceBuilder() {
-        //initSubviews()
         layer?.backgroundColor = backgroundColor.cgColor
         layer?.cornerRadius = cornerRadius
         
@@ -139,7 +142,6 @@ class CardView: NSView {
         let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CardView"), bundle: bundle)
         nib!.instantiate(withOwner: self, topLevelObjects: nil)
         contentView.frame = bounds
-        contentView.addSubview(nameLabel)
         self.addSubview(contentView)
         
         // custom initialization logic
@@ -164,6 +166,19 @@ class CardView: NSView {
         checklistIcon.image = checklistIcon.image?.tint(color: textColor)
     }
     
+    func addLabels (labelsColors: [String]) {
+        labelsStackView.subviews.forEach({$0.removeFromSuperview()})
+        for labelColor in labelsColors {
+            let color = Color.fromString(labelColor)
+            let image = NSImage(color: color, size: NSSize(width: 50, height: 15))
+            let imageView = NSImageView()
+            imageView.image = image
+            imageView.wantsLayer = true
+            imageView.layer?.cornerRadius = 5
+            labelsStackView.addArrangedSubview(imageView)
+        }
+    }
+    
 }
 
 extension NSView {
@@ -178,6 +193,13 @@ extension NSView {
 }
 
 extension NSImage {
+    convenience init(color: NSColor, size: NSSize) {
+        self.init(size: size)
+        lockFocus()
+        color.drawSwatch(in: NSRect(origin: .zero, size: size))
+        unlockFocus()
+    }
+    
     func tint(color: NSColor) -> NSImage {
         guard !self.isTemplate else { return self }
         let image = self.copy() as! NSImage

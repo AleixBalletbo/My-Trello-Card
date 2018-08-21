@@ -70,12 +70,15 @@ class MainWindowViewController: NSViewController, MainWindowView {
     
     func loadCard(card: Card?) {
         if let existingCard = card {
+            
             cardView.nameText = existingCard.name
+            
             cardView.descriptionText = existingCard.description
+            
             if let dueDate = existingCard.due {
                 cardView.dueText = getReadableDate(date: dueDate)
                 if dueDate < Date() {
-                    let redColor = CGColor(red: 0.8, green: 0, blue: 0, alpha: 1)
+                    let redColor = Color.fromString("red").cgColor
                     cardView.setDueBackground(backgroundColor: redColor, textColor: NSColor.white)
                 }
                 else {
@@ -86,14 +89,17 @@ class MainWindowViewController: NSViewController, MainWindowView {
                 cardView.dueText = "This card has no due date"
                 cardView.setDueBackground(backgroundColor: CGColor.clear, textColor: NSColor.gray)
             }
+            
             cardView.checklistItemsText = "\(existingCard.checkItemsChecked)/\(existingCard.checkItems)"
             if existingCard.checkItemsChecked == existingCard.checkItems && existingCard.checkItems != 0 {
-                let greenColor = CGColor(red: 0, green: 0.8, blue: 0, alpha: 1)
+                let greenColor = Color.fromString("green").cgColor
                 cardView.setChecklistBackground(backgroundColor: greenColor, textColor: NSColor.white)
             }
             else {
                 cardView.setChecklistBackground(backgroundColor: CGColor.clear, textColor: NSColor.gray)
             }
+            
+            cardView.addLabels(labelsColors: existingCard.labelsColors)
         }
         else {
             cardView.nameText = "There are no cards left"

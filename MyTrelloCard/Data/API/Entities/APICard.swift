@@ -15,6 +15,7 @@ struct ApiCard: InitializableWithData, InitializableWithJson {
     var due: String?
     var checkItems: Int
     var checkItemsChecked: Int
+    var labelsColors: [String]
     
     init (data: Data?) throws {
         guard let data = data,
@@ -31,7 +32,8 @@ struct ApiCard: InitializableWithData, InitializableWithJson {
         guard let id = json["id"] as? String,
             let name = json["name"] as? String,
             let description = json["desc"] as? String,
-            let badges = json["badges"] as? [String: Any] else {
+            let badges = json["badges"] as? [String: Any],
+            let labels = json["labels"] as? [[String: Any]] else {
                 throw NSError.createParseError()
         }
         
@@ -42,19 +44,27 @@ struct ApiCard: InitializableWithData, InitializableWithJson {
                 throw NSError.createParseError()
         }
         
+        var labelsColors: [String] = []
+        for label in labels {
+            if let labelColor = label["color"] as? String {
+                labelsColors.append(labelColor)
+            }
+        }
+        
         self.id = id
         self.name = name
         self.description = description
         self.due = due
         self.checkItems = checkItems
         self.checkItemsChecked = checkItemsChecked
+        self.labelsColors = labelsColors
     }
 }
 
 extension ApiCard {
     
     var card: Card {
-        return Card(id: id, name: name, description: description, due: getDueDate(due: due), checkItems: checkItems, checkItemsChecked: checkItemsChecked)
+        return Card(id: id, name: name, description: description, due: getDueDate(due: due), checkItems: checkItems, checkItemsChecked: checkItemsChecked, labelsColors: labelsColors)
     }
     
     private func getDueDate (due: String?) -> Date? {

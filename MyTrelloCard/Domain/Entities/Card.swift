@@ -15,4 +15,5 @@ struct Card {
     var due: Date?
     var checkItems: Int
     var checkItemsChecked: Int
+    var labelsColors: [String]
 }

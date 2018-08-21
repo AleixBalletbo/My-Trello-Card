@@ -16,6 +16,7 @@
                 <outlet property="dueIcon" destination="r6N-dS-rOr" id="GTF-hX-Cu5"/>
                 <outlet property="dueLabel" destination="PrL-1P-xop" id="c9b-da-q1I"/>
                 <outlet property="dueStackView" destination="kwv-lV-LHl" id="yyH-ai-TCU"/>
+                <outlet property="labelsStackView" destination="ret-2M-rut" id="N1T-XD-X71"/>
                 <outlet property="nameLabel" destination="xIz-Xg-sXK" id="dxS-8y-ERa"/>
             </connections>
         </customObject>
@@ -26,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xIz-Xg-sXK">
-                    <rect key="frame" x="10" y="151" width="380" height="24"/>
+                    <rect key="frame" x="10" y="141" width="380" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Card Name" drawsBackground="YES" id="B6g-4Q-0gs">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,7 +35,7 @@
                     </textFieldCell>
                 </textField>
                 <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXs-ZY-XNR" userLabel="Description Scroll View">
-                    <rect key="frame" x="10" y="89" width="380" height="52"/>
+                    <rect key="frame" x="10" y="79" width="380" height="52"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="I8V-sk-JCe">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="52"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +76,7 @@
                     </scroller>
                 </scrollView>
                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-lV-LHl">
-                    <rect key="frame" x="10" y="59" width="82" height="20"/>
+                    <rect key="frame" x="10" y="49" width="82" height="20"/>
                     <subviews>
                         <imageView horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6N-dS-rOr" userLabel="Due Date Image">
                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -106,7 +107,7 @@
                     </customSpacing>
                 </stackView>
                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-0L-rih">
-                    <rect key="frame" x="10" y="29" width="84" height="20"/>
+                    <rect key="frame" x="10" y="19" width="84" height="20"/>
                     <subviews>
                         <imageView horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fHI-qY-g4r" userLabel="Checklist Image">
                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -136,9 +137,18 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
+                <stackView orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ret-2M-rut" userLabel="Labels Stack View">
+                    <rect key="frame" x="10" y="172" width="380" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="tLQ-W1-Vku"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="xc1-0L-rih" firstAttribute="top" secondItem="kwv-lV-LHl" secondAttribute="bottom" constant="10" id="3kF-d8-DeG"/>
+                <constraint firstItem="ret-2M-rut" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="Aq8-EE-Eny"/>
+                <constraint firstItem="ret-2M-rut" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="Baz-D4-XoG"/>
+                <constraint firstAttribute="trailing" secondItem="ret-2M-rut" secondAttribute="trailing" constant="10" id="H7j-if-rCi"/>
                 <constraint firstItem="cXs-ZY-XNR" firstAttribute="top" secondItem="xIz-Xg-sXK" secondAttribute="bottom" constant="10" id="LMd-pM-u0T"/>
                 <constraint firstItem="xc1-0L-rih" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="QWj-eG-tBB"/>
                 <constraint firstItem="kwv-lV-LHl" firstAttribute="top" secondItem="cXs-ZY-XNR" secondAttribute="bottom" constant="10" id="SoV-Ge-DtT"/>
@@ -147,7 +157,7 @@
                 <constraint firstAttribute="trailing" secondItem="xIz-Xg-sXK" secondAttribute="trailing" constant="10" id="o4y-b1-jZS"/>
                 <constraint firstItem="kwv-lV-LHl" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="qiA-qK-MpB"/>
                 <constraint firstItem="xIz-Xg-sXK" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="sJb-uh-OWq"/>
-                <constraint firstItem="xIz-Xg-sXK" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="uYu-BH-THr"/>
+                <constraint firstItem="xIz-Xg-sXK" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="30" id="uYu-BH-THr"/>
             </constraints>
             <point key="canvasLocation" x="139" y="165.5"/>
         </customView>
